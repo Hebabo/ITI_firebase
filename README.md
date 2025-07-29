@@ -124,7 +124,6 @@ lib/
 │   │   │   ├── signup_state.dart
 │   │   ├── models/
 │   │   │   ├── auth_repo.dart
-│   ├── bloc_screens/
 ├── utils/
 │   ├── app_colors.dart
 │   ├── app_themes.dart
