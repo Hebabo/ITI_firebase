@@ -22,3 +22,4 @@ final class LoginFailureEvent extends LoginEvent {
   final String error;
   LoginFailureEvent({required this.error});
 }
+final class LoginLogoutEvent extends LoginEvent {}

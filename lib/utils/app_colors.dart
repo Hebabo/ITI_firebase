@@ -13,6 +13,8 @@ class AppColors {
   static Color primaryColorDark = Colors.yellow[700]!; // dark yellow accent
   static const Color textColor = Colors.black;
   static const Color searchBarColor = Color(0xFFF6F6F6);
+  static Color googleButtonColor = Color(0xffD63A3D);
+
 
   // Color mainColor = Color();
 }

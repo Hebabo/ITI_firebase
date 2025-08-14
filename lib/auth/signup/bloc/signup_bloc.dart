@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebaseiti/auth/signup/models/auth_repo.dart';
+import 'package:firebaseiti/data/model/auth_repo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../utils/signup_form_validator.dart';
@@ -24,7 +24,6 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
   ) async {
     emit(SignupLoadingState());
 
-    // await Future.delayed(const Duration(seconds: 2));
     final errors = SignUpValidator.validateSignUpFields(
       email: event.email,
       password: event.password,
@@ -42,8 +41,10 @@ class SignupBloc extends Bloc<SignupEvent, SignupState> {
           password: event.password,
           name: event.username,
         );
-        if (user != null) {
+        if (user != null && user.emailVerified) {
           emit(SignupSuccessState());
+        } else if (user!.emailVerified) {
+          emit(SignupFailureState(error: 'please verify your email address.'));
         } else {
           emit(
             SignupFailureState(error: 'email already used or wrong password.'),

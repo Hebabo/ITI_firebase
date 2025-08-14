@@ -13,3 +13,5 @@ final class LoginFailureState extends LoginState {
   final String error;
   LoginFailureState({required this.error});
 }
+final class LogoutState extends LoginState {}
+

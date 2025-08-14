@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_page_screen.dart';
-import 'login_screen.dart';
+// import 'login_screen.dart';
 import 'profile_screen.dart';
 
 class MainNavigation extends StatefulWidget {
@@ -16,7 +16,7 @@ class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    LogIn(),
+    // LoginScreen(),
     HomePage(),
     Profile(),
   ];
@@ -33,7 +33,7 @@ class _MainNavigationState extends State<MainNavigation> {
           });
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Login'),
+          // BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Login'),
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
